@@ -1,0 +1,294 @@
+.header {
+    position: fixed;
+    height: fit-content;
+    min-height: 100px;
+    width: 100%;
+    background: linear-gradient(to bottom,rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+    z-index: 1150;
+    transition: all .5s;
+}
+
+.header-scroll {
+    background: #fff;
+    *box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 23%);
+    *box-shadow: 0 3px 6px #8e8e8e;
+    box-shadow: 0 3px 6px #aeaeae;
+}
+
+header {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 0;
+}
+
+header .logo-container {
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 45px;
+    width: 150px;
+    height: 43px;
+    background-image: url("../images/logo-horizon-bmw.png");
+    background-size: cover;
+    background-position: bottom left;
+}
+
+.header-scroll header .logo-container {
+    background-position: top left;
+}
+
+header .menu-nav-bar {
+    display: block;
+    text-align: right;
+    margin-right: 90px;
+}
+
+header .menu-nav-bar .menu-icon {
+    padding: 20px 10px 0 0;
+    list-style: none;
+    display: none;
+    justify-content: flex-end;
+    flex-direction: row;
+    column-gap: 20px;
+}
+
+header .menu-nav-bar .menu-icon li {
+    display: inline-block;
+}
+
+header .menu-nav-bar .menu-icon li a {
+    position: relative;
+    color: #fff;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+header .menu-nav-bar .menu-icon li a:hover::after {
+    content: attr(aria-label);
+    position: absolute;
+    top: calc(-100% - 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    padding: 10px;
+    background: #fff;
+    color: #000;
+    font-size: 12px;
+    font-family: Arial,'sans-serif';
+    font-weight: 300;
+}
+
+.header-scroll header .menu-nav-bar .menu-icon li a {
+    color: #8e8e8e;
+}
+
+.header-scroll header .menu-nav-bar .menu-icon li a:hover {
+    color: #000;
+}
+
+header .logo-icon-container {
+    display: none;
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    top: 10px;
+    right: 20px;
+}
+
+header .logo-icon-container img {
+    height: 100%;
+}
+
+@media (min-width: 330px) {
+    header .logo-icon-container {
+        display: inline-block;
+    }
+}
+
+@media (min-width: 375px) {
+    header .logo-container {
+        top: 20px;
+        width: 100px;
+        height: 28px;
+    }
+
+    header .menu-nav-bar .menu-icon {
+        display: flex;
+    }
+}
+
+@media (min-width: 450px) {
+    header .logo-container {
+        top: 18px;
+        width: 120px;
+        height: 35px;
+    }
+
+    header .menu-nav-bar .menu-icon li a {
+        font-size: 19px;
+    }
+}
+
+@media (min-width: 520px) {
+    header .logo-container {
+        top: 15px;
+        width: 150px;
+        height: 43px;
+    }
+
+    header .menu-nav-bar {
+        margin-right: 100px;
+    }
+
+    header .menu-nav-bar .menu-icon li a {
+        font-size: 21px;
+    }
+}
+
+/* Start desktop CSS */
+@media (min-width: 860px) {
+    header .logo-container {
+        top: 10px;
+        left: 20px;
+    }
+
+    header {
+        padding-top: 60px;
+    }
+
+    header .menu-nav-bar > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header .menu-nav-bar > div > nav {
+        position: relative;
+        width: 80%;
+    }
+
+    header .menu-nav-bar > div > nav ul {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding: 0;
+        list-style: none;
+        margin: 0;
+    }
+
+    header .menu-nav-bar > div > nav ul li {
+        padding: 0 20px 15px 20px;
+        border-bottom: 4px solid transparent;
+    }
+
+    header .menu-nav-bar > div > nav ul li:hover,
+    header .menu-nav-bar > div > nav ul li:active {
+        border-bottom-color: #1c69d4;
+    }
+
+    header .menu-nav-bar > div > nav ul li div.menu-sub-items {
+        display: none;
+    }
+
+    header .menu-nav-bar > div > nav ul li div.menu-sub-items ul {
+        padding: 10px;
+    }
+
+    header .menu-nav-bar > div > nav ul li div.menu-sub-items ul li {
+        padding: 12px 25px;
+    }
+
+    header .menu-nav-bar > div > nav ul li div.menu-sub-items ul li a {
+        font-size: 15px;
+        font-weight: 300;
+    }
+
+    header .menu-nav-bar > div > nav ul li:hover div.menu-sub-items,
+    header .menu-nav-bar > div > nav ul li:active div.menu-sub-items {
+        display: block;
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+    }
+
+    header .menu-nav-bar > div > nav ul li:hover div.menu-sub-items a,
+    header .menu-nav-bar > div > nav ul li:active div.menu-sub-items a {
+        color: black;
+    }
+
+    header .menu-nav-bar > div > nav ul a {
+        font-size: 16px;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .header-scroll header .menu-nav-bar > div > nav ul a {
+        color: #8e8e8e;
+    }
+
+    .header-scroll header .menu-nav-bar > div > nav ul li:hover a,
+    .header-scroll header .menu-nav-bar > div > nav ul li:active a {
+        color: #000;
+    }
+
+    header .menu-nav-bar .menu-subtitle {
+        color: #fff;
+        border-top: 1px solid hsla(0,0%,100%,.4);
+        padding-top: 5px;
+        margin-right: 20px;
+    }
+
+    header .menu-nav-bar .menu-icon {
+        padding-top: 0;
+    }
+
+    header .logo-icon-container {
+        top: 45px;
+    }
+
+    header .menu-nav-bar .menu-icon li {
+        border-bottom: 4px solid transparent;
+    }
+
+    header .menu-nav-bar .menu-icon li:hover {
+        border-bottom-color: #1c69d4;
+    }
+}
+
+@media (min-width: 1006px) {
+    header .menu-nav-bar .menu-icon {
+        margin: 0 20px 0 0;
+        column-gap: 30px;
+    }
+
+    header .logo-icon-container {
+        height: 53px;
+        width: 53px;
+        right: 30px;
+    }
+}
+
+@media (min-width: 1200px) {
+    header {
+        padding-top: 70px;
+    }
+
+    header .menu-nav-bar .menu-icon {
+        column-gap: 40px;
+    }
+
+    header .menu-nav-bar .menu-icon li a {
+        font-size: 28px;
+    }
+
+    header .menu-nav-bar > div > nav ul li {
+        padding: 0 20px 25px 20px;
+    }
+
+    header .logo-icon-container {
+        top: 55px;
+    }
+}
